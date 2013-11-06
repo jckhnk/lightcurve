@@ -8,6 +8,8 @@
 
 #define USAGE "lightcurve_v8 -robj 0.25 -d 40  -star 0.02 -f r -b 0 -out outfile "
 
+// MJH added this comment as a test of git.
+
 double km_per_AU = 1.5e8;
 double km_per_nm = 1.0e-12;
 double radians_per_arcsec = 1.0/206265.;
