@@ -5,10 +5,7 @@
 
 #define PI 3.14159265358979323846
 #define NW 5
-
-#define USAGE "lightcurve_v8 -robj 0.25 -d 40  -star 0.02 -f r -b 0 -out outfile "
-
-// MJH added this comment as a test of git.
+#define USAGE "lightcurve -robj 0.25 -d 40  -star 0.02 -f r -b 0 -out outfile"
 
 double km_per_AU = 1.5e8;
 double km_per_nm = 1.0e-12;
@@ -57,28 +54,28 @@ int main(int argc, char **argv)
 	exit(0);
     }
     for(k=1;k<argc; k++) {
-	if(strcmp(argv[k], "-h")==0) {
-	    printf("Usage: %s \n", USAGE); 
-	    exit(0);
-	}
-	if(strcmp(argv[k], "-robj")==0)  {robj   =atof(argv[k+1]);} 
-	if(strcmp(argv[k], "-d")==0)     {d      =atof(argv[k+1]);}
-	if(strcmp(argv[k], "-star")==0)  {as     =atof(argv[k+1]);}
-	if(strcmp(argv[k], "-sp")==0)    {sp     =atof(argv[k+1]);}
-	if(strcmp(argv[k], "-vt")==0)    {vt     =atof(argv[k+1]);}
-	if(strcmp(argv[k], "-b")==0)     {b      =atof(argv[k+1]);}
-	if(strcmp(argv[k], "-m")==0)     {m      =atof(argv[k+1]);}
-	if(strcmp(argv[k], "-off")==0)   {offset =atof(argv[k+1]);}
-	if(strcmp(argv[k], "-nf")==0)    {n_per_F=atof(argv[k+1]);}
-	if(strcmp(argv[k], "-mw")==0)    {mw     =atof(argv[k+1]); w1 = mw; w2 = mw;}
-	if(strcmp(argv[k], "-out")==0)   {outfile=fopen(argv[k+1], "w");}
-	if(strcmp(argv[k], "-f")==0) { /* FILTERS */
-	    if(strcmp(argv[k+1], "g")==0) {w1=405; w2=550;}
-	    if(strcmp(argv[k+1], "r")==0) {w1=552; w2=689;}
-	    if(strcmp(argv[k+1], "i")==0) {w1=691; w2=815;}
-	    if(strcmp(argv[k+1], "z")==0) {w1=815; w2=915;} 
-	    if(strcmp(argv[k+1], "y")==0) {w1=900; w2=1215;} 
-	}
+    	if(strcmp(argv[k], "-h")==0) {
+    	    printf("Usage: %s \n", USAGE); 
+    	    exit(0);
+    	}
+    	if(strcmp(argv[k], "-robj")==0)  {robj   =atof(argv[k+1]);} 
+    	if(strcmp(argv[k], "-d")==0)     {d      =atof(argv[k+1]);}
+    	if(strcmp(argv[k], "-star")==0)  {as     =atof(argv[k+1]);}
+    	if(strcmp(argv[k], "-sp")==0)    {sp     =atof(argv[k+1]);}
+    	if(strcmp(argv[k], "-vt")==0)    {vt     =atof(argv[k+1]);}
+    	if(strcmp(argv[k], "-b")==0)     {b      =atof(argv[k+1]);}
+    	if(strcmp(argv[k], "-m")==0)     {m      =atof(argv[k+1]);}
+    	if(strcmp(argv[k], "-off")==0)   {offset =atof(argv[k+1]);}
+    	if(strcmp(argv[k], "-nf")==0)    {n_per_F=atof(argv[k+1]);}
+    	if(strcmp(argv[k], "-mw")==0)    {mw     =atof(argv[k+1]); w1 = mw; w2 = mw;}
+    	if(strcmp(argv[k], "-out")==0)   {outfile=fopen(argv[k+1], "w");}
+    	if(strcmp(argv[k], "-f")==0) { /* FILTERS */
+    	    if(strcmp(argv[k+1], "g")==0) {w1=405; w2=550;}
+    	    if(strcmp(argv[k+1], "r")==0) {w1=552; w2=689;}
+    	    if(strcmp(argv[k+1], "i")==0) {w1=691; w2=815;}
+    	    if(strcmp(argv[k+1], "z")==0) {w1=815; w2=915;} 
+    	    if(strcmp(argv[k+1], "y")==0) {w1=900; w2=1215;} 
+    	}
     }
 
     /* Internal units are km and sec. */
